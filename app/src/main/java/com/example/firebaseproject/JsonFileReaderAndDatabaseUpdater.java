@@ -24,11 +24,12 @@ import java.util.Map;
 public class JsonFileReaderAndDatabaseUpdater extends IntentService {
 
     private static final String TAG = JsonFileReaderAndDatabaseUpdater.class.getSimpleName();
-    public static Map<String, String> databaseContent = new HashMap<>();
+    private final static Map<String, String> databaseContent = new HashMap<>();
 
     public JsonFileReaderAndDatabaseUpdater() {
         super("FileReader");
     }
+
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         String fileContent;
@@ -68,5 +69,9 @@ public class JsonFileReaderAndDatabaseUpdater extends IntentService {
         catch (JSONException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Map<String, String> getDatabaseContent() {
+        return databaseContent;
     }
 }

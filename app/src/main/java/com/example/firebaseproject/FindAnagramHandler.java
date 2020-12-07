@@ -1,15 +1,12 @@
 package com.example.firebaseproject;
 
-import android.app.Activity;
-import android.widget.TextView;
-
 import com.example.firebaseproject.databinding.ActivityMainBinding;
 
 import java.util.Arrays;
 
 public class FindAnagramHandler {
 
-    private ActivityMainBinding binding;
+    private final ActivityMainBinding binding;
 
     public FindAnagramHandler(ActivityMainBinding binding) {
         this.binding = binding;
@@ -17,7 +14,7 @@ public class FindAnagramHandler {
 
     public void getNumberOfAnagrams(final String word) {
         int num_anagrams = 0;
-        for (String value: JsonFileReaderAndDatabaseUpdater.databaseContent.values()) {
+        for (String value: JsonFileReaderAndDatabaseUpdater.getDatabaseContent().values()) {
             if (isAnagram(word, value)) {
                 num_anagrams++;
             }

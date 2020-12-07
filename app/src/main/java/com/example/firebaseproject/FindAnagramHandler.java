@@ -3,14 +3,16 @@ package com.example.firebaseproject;
 import android.app.Activity;
 import android.widget.TextView;
 
+import com.example.firebaseproject.databinding.ActivityMainBinding;
+
 import java.util.Arrays;
 
 public class FindAnagramHandler {
 
-    private Activity activity;
+    private ActivityMainBinding binding;
 
-    public FindAnagramHandler(Activity activity) {
-        this.activity = activity;
+    public FindAnagramHandler(ActivityMainBinding binding) {
+        this.binding = binding;
     }
 
     public void getNumberOfAnagrams(final String word) {
@@ -20,8 +22,7 @@ public class FindAnagramHandler {
                 num_anagrams++;
             }
         }
-
-        ((TextView) activity.findViewById(R.id.result)).setText(Integer.toString(num_anagrams));
+        binding.setResult(Integer.toString(num_anagrams));
     }
 
     private boolean isAnagram(String s1, String s2)

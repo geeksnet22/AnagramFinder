@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         startService(fileReaderIntent);
 
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setFindAnagramHandler(new FindAnagramHandler(this));
+        binding.setFindAnagramHandler(new FindAnagramHandler(binding));
         binding.setResult("0");
     }
 }

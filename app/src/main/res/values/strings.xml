@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FireBaseProject</string>
+    <string name="find_anagrams">Find anagrams</string>
+    <string name="word_hint">Enter word here...</string>
+</resources>
